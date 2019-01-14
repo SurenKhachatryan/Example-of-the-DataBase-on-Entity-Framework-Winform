@@ -79,6 +79,7 @@
             this.DeleteUserButton.TabIndex = 35;
             this.DeleteUserButton.Text = "Delete User";
             this.DeleteUserButton.UseVisualStyleBackColor = true;
+            this.DeleteUserButton.Click += new System.EventHandler(this.DeleteUserButton_Click);
             // 
             // DeleteUserTextBoxID
             // 
@@ -167,6 +168,7 @@
             this.NewUserButtonSignUp.TabIndex = 20;
             this.NewUserButtonSignUp.Text = "Sign Up";
             this.NewUserButtonSignUp.UseVisualStyleBackColor = true;
+            this.NewUserButtonSignUp.Click += new System.EventHandler(this.NewUserButtonSignUp_Click);
             // 
             // NewUserTextBoxPhone
             // 
@@ -207,6 +209,7 @@
             this.SelectAllUserDataButton.TabIndex = 48;
             this.SelectAllUserDataButton.Text = "Get All User Data";
             this.SelectAllUserDataButton.UseVisualStyleBackColor = false;
+            this.SelectAllUserDataButton.Click += new System.EventHandler(this.SelectAllUserDataButton_Click);
             // 
             // NewUserGroupBox
             // 
@@ -341,6 +344,7 @@
             this.UpdateUserDataButton.TabIndex = 38;
             this.UpdateUserDataButton.Text = "Update Data";
             this.UpdateUserDataButton.UseVisualStyleBackColor = true;
+            this.UpdateUserDataButton.Click += new System.EventHandler(this.UpdateUserDataButton_Click);
             // 
             // UpdateUserDataButtonGetUserData
             // 
@@ -350,6 +354,7 @@
             this.UpdateUserDataButtonGetUserData.TabIndex = 37;
             this.UpdateUserDataButtonGetUserData.Text = "Get User Data";
             this.UpdateUserDataButtonGetUserData.UseVisualStyleBackColor = true;
+            this.UpdateUserDataButtonGetUserData.Click += new System.EventHandler(this.UpdateUserDataButtonGetUserData_Click);
             // 
             // UpdateUserDateTextBoxPhone
             // 

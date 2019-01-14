@@ -12,9 +12,35 @@ namespace MyDBExemple
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void SelectAllUserDataButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NewUserButtonSignUp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdateUserDataButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteUserButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdateUserDataButtonGetUserData_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
