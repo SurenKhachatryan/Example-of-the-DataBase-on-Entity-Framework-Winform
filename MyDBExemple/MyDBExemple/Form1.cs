@@ -15,7 +15,7 @@ namespace MyDBExemple
 
         #region TextBoxArrays
         private TextBox[] updateUserDataTextBoxArr;
-        private TextBox[] newUserTextBoxArr;
+        private TextBox[] newUserTextBoxsArr;
         #endregion
 
 
@@ -23,7 +23,7 @@ namespace MyDBExemple
         {
             InitializeComponent();
 
-            newUserTextBoxArr = new TextBox[]
+            newUserTextBoxsArr = new TextBox[]
             {
                 NewUserTextBoxFirstName,
                 NewUserTextBoxLastName,
@@ -90,7 +90,7 @@ namespace MyDBExemple
                 db.Users.Add(user);
                 db.SaveChanges();
             }
-            ClearTextBoxs.Clear(newUserTextBoxArr);
+            ClearTextBoxs.Clear(newUserTextBoxsArr);
             Get_All_Data();
         }
 
