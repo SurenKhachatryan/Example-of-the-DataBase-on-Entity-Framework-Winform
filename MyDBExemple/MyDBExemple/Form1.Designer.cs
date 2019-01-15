@@ -192,10 +192,10 @@
             this.NewUserTextBoxEmail.Size = new System.Drawing.Size(153, 20);
             this.NewUserTextBoxEmail.TabIndex = 18;
             // 
-            // UpdateUserDateTextBoxID
+            // UpdateUserDataTextBoxID
             // 
             this.UpdateUserDataTextBoxID.Location = new System.Drawing.Point(72, 21);
-            this.UpdateUserDataTextBoxID.Name = "UpdateUserDateTextBoxID";
+            this.UpdateUserDataTextBoxID.Name = "UpdateUserDataTextBoxID";
             this.UpdateUserDataTextBoxID.Size = new System.Drawing.Size(64, 20);
             this.UpdateUserDataTextBoxID.TabIndex = 30;
             // 
@@ -364,45 +364,45 @@
             this.UpdateUserDataButtonGetUserData.UseVisualStyleBackColor = true;
             this.UpdateUserDataButtonGetUserData.Click += new System.EventHandler(this.Update_User_Data_Button_Get_User_Data_Click);
             // 
-            // UpdateUserDateTextBoxPhone
+            // UpdateUserDataTextBoxPhone
             // 
             this.UpdateUserDataTextBoxPhone.Location = new System.Drawing.Point(72, 177);
-            this.UpdateUserDataTextBoxPhone.Name = "UpdateUserDateTextBoxPhone";
+            this.UpdateUserDataTextBoxPhone.Name = "UpdateUserDataTextBoxPhone";
             this.UpdateUserDataTextBoxPhone.Size = new System.Drawing.Size(153, 20);
             this.UpdateUserDataTextBoxPhone.TabIndex = 36;
             // 
-            // UpdateUserDateTextBoxEmail
+            // UpdateUserDataTextBoxEmail
             // 
             this.UpdateUserDataTextBoxEmail.Location = new System.Drawing.Point(72, 151);
-            this.UpdateUserDataTextBoxEmail.Name = "UpdateUserDateTextBoxEmail";
+            this.UpdateUserDataTextBoxEmail.Name = "UpdateUserDataTextBoxEmail";
             this.UpdateUserDataTextBoxEmail.Size = new System.Drawing.Size(153, 20);
             this.UpdateUserDataTextBoxEmail.TabIndex = 35;
             // 
-            // UpdateUserDateTextBoxLastName
+            // UpdateUserDataTextBoxLastName
             // 
             this.UpdateUserDataTextBoxLastName.Location = new System.Drawing.Point(72, 125);
-            this.UpdateUserDataTextBoxLastName.Name = "UpdateUserDateTextBoxLastName";
+            this.UpdateUserDataTextBoxLastName.Name = "UpdateUserDataTextBoxLastName";
             this.UpdateUserDataTextBoxLastName.Size = new System.Drawing.Size(153, 20);
             this.UpdateUserDataTextBoxLastName.TabIndex = 34;
             // 
-            // UpdateUserDateTextBoxFirstName
+            // UpdateUserDataTextBoxFirstName
             // 
             this.UpdateUserDataTextBoxFirstName.Location = new System.Drawing.Point(72, 99);
-            this.UpdateUserDataTextBoxFirstName.Name = "UpdateUserDateTextBoxFirstName";
+            this.UpdateUserDataTextBoxFirstName.Name = "UpdateUserDataTextBoxFirstName";
             this.UpdateUserDataTextBoxFirstName.Size = new System.Drawing.Size(153, 20);
             this.UpdateUserDataTextBoxFirstName.TabIndex = 33;
             // 
-            // UpdateUserDateTextBoxPassword
+            // UpdateUserDataTextBoxPassword
             // 
             this.UpdateUserDataTextBoxPassword.Location = new System.Drawing.Point(72, 73);
-            this.UpdateUserDataTextBoxPassword.Name = "UpdateUserDateTextBoxPassword";
+            this.UpdateUserDataTextBoxPassword.Name = "UpdateUserDataTextBoxPassword";
             this.UpdateUserDataTextBoxPassword.Size = new System.Drawing.Size(153, 20);
             this.UpdateUserDataTextBoxPassword.TabIndex = 32;
             // 
-            // UpdateUserDateTextBoxLoginName
+            // UpdateUserDataTextBoxLoginName
             // 
             this.UpdateUserDataTextBoxLoginName.Location = new System.Drawing.Point(72, 47);
-            this.UpdateUserDataTextBoxLoginName.Name = "UpdateUserDateTextBoxLoginName";
+            this.UpdateUserDataTextBoxLoginName.Name = "UpdateUserDataTextBoxLoginName";
             this.UpdateUserDataTextBoxLoginName.Size = new System.Drawing.Size(153, 20);
             this.UpdateUserDataTextBoxLoginName.TabIndex = 31;
             // 
@@ -431,7 +431,7 @@
             this.Password,
             this.E_mail,
             this.Phone});
-            this.SelectAllUserDataGridView.Location = new System.Drawing.Point(242, 8);
+            this.SelectAllUserDataGridView.Location = new System.Drawing.Point(241, 8);
             this.SelectAllUserDataGridView.Name = "SelectAllUserDataGridView";
             this.SelectAllUserDataGridView.Size = new System.Drawing.Size(637, 472);
             this.SelectAllUserDataGridView.TabIndex = 49;
