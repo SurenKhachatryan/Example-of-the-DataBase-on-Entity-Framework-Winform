@@ -1,48 +1,80 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyDBExemple
 {
     public partial class Form1 : Form
     {
-        UsersDBEntities db;
-        User user;
+        #region DB Prop
+        private UsersDBEntities db;
+        private User user;
+        #endregion
+
+        #region TextBoxArrays
+        private TextBox[] updateUserDataTextBoxArr;
+        private TextBox[] newUserTextBoxArr;
+        #endregion
+
 
         public Form1()
         {
             InitializeComponent();
+
+            newUserTextBoxArr = new TextBox[]
+            {
+                NewUserTextBoxFirstName,
+                NewUserTextBoxLastName,
+                NewUserTextBoxLoginName,
+                NewUserTextBoxPassword,
+                NewUserTextBoxEmail,
+                NewUserTextBoxPhone
+            };
+
+            updateUserDataTextBoxArr = new TextBox[]
+            {
+                UpdateUserDataTextBoxFirstName,
+                UpdateUserDataTextBoxLastName,
+                UpdateUserDataTextBoxLoginName,
+                UpdateUserDataTextBoxPassword,
+                UpdateUserDataTextBoxEmail,
+                UpdateUserDataTextBoxPhone
+            };
+
         }
 
+        /// <summary>
+        /// Возвращает все данные всех пользователей
+        /// </summary>
         private void SelectAllUserDataButton_Click(object sender, EventArgs e)
         {
-            GetAllData();
+            Get_All_Data();
         }
 
-        private void GetAllData()
+        /// <summary>
+        /// Возвращает все данные о всех пользователей и добавляет в ListBox
+        /// </summary>
+        private void Get_All_Data()
         {
-            SelectAllUserDataListBox.Items.Clear();
             using (db = new UsersDBEntities())
             {
+                SelectAllUserDataGridView.Rows.Clear();
                 DbSet users = db.Users;
                 foreach (User us in users)
                 {
-                    SelectAllUserDataListBox.Items.Add($"{us.User_Id}\t{us.Login_Name}\t" +
-                                                       $"{us.Password}\t{us.Last_Name}\t" +
-                                                       $"{us.First_Name}\t{us.Email}\t" +
-                                                       $"{us.Phone}");
+                    SelectAllUserDataGridView.Rows.Add(new string[] { us.User_Id.ToString(), us.First_Name,
+                                                                      us.Last_Name, us.Login_Name, us.Password,
+                                                                      us.Email, us.Phone });
                 }
             }
         }
 
-        private void NewUserButtonSignUp_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Создает нового пользователя
+        /// </summary>
+        private void New_User_Button_Sign_Up_Click(object sender, EventArgs e)
         {
             using (db = new UsersDBEntities())
             {
@@ -58,57 +90,74 @@ namespace MyDBExemple
                 db.Users.Add(user);
                 db.SaveChanges();
             }
-            GetAllData();
+            ClearTextBoxs.Clear(newUserTextBoxArr);
+            Get_All_Data();
         }
 
-        private void UpdateUserDataButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Обнавляет данные Пользователя по User_Id
+        /// </summary>
+        private void Update_User_Data_Button_Click(object sender, EventArgs e)
         {
             using (db = new UsersDBEntities())
             {
-                DbSet users = db.Users;
-                foreach (User us in users)
-                {
-                    if (us.User_Id == Convert.ToInt32(UpdateUserDateTextBoxID.Text))
-                    {
-                        us.Login_Name = UpdateUserDateTextBoxLoginName.Text;
-                        us.Password = UpdateUserDateTextBoxPassword.Text;
-                        us.Last_Name = UpdateUserDateTextBoxLastName.Text;
-                        us.First_Name = UpdateUserDateTextBoxFirstName.Text;
-                        us.Phone = UpdateUserDateTextBoxPhone.Text;
-                        us.Email = UpdateUserDateTextBoxEmail.Text;
-                        break;
-                    }
-                }
+                int userID = Convert.ToInt32(UpdateUserDataTextBoxID.Text);
+                user = db.Users
+                   .Where(us => us.User_Id == userID)
+                   .FirstOrDefault();
+
+                user.Login_Name = UpdateUserDataTextBoxLoginName.Text;
+                user.Password = UpdateUserDataTextBoxPassword.Text;
+                user.Last_Name = UpdateUserDataTextBoxLastName.Text;
+                user.First_Name = UpdateUserDataTextBoxFirstName.Text;
+                user.Phone = UpdateUserDataTextBoxPhone.Text;
+                user.Email = UpdateUserDataTextBoxEmail.Text;
+
                 db.SaveChanges();
-                GetAllData();
             }
+            ClearTextBoxs.Clear(updateUserDataTextBoxArr);
+            Get_All_Data();
         }
 
-        private void DeleteUserButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Удоляет пользователя по User_Id
+        /// </summary>
+        private void Delete_User_Button_Click(object sender, EventArgs e)
         {
+            int userID = Convert.ToInt32(DeleteUserTextBoxID.Text);
+            using (db = new UsersDBEntities())
+            {
+                user = db.Users
+                    .Where(us => us.User_Id == userID)
+                    .FirstOrDefault();
 
-            GetAllData();
+                db.Users.Remove(user);
+                db.SaveChanges();
+            }
+            DeleteUserTextBoxID.Text = string.Empty;
+            Get_All_Data();
         }
 
-        private void UpdateUserDataButtonGetUserData_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Возвращает данные о пользователя по User_Id  
+        /// </summary>
+        private void Update_User_Data_Button_Get_User_Data_Click(object sender, EventArgs e)
         {
             using (db = new UsersDBEntities())
             {
-                DbSet users = db.Users;
-                foreach (User us in users)
-                {
-                    if (us.User_Id == Convert.ToInt32(UpdateUserDateTextBoxID.Text))
-                    {
-                        UpdateUserDateTextBoxLoginName.Text = us.Login_Name;
-                        UpdateUserDateTextBoxPassword.Text = us.Password;
-                        UpdateUserDateTextBoxLastName.Text = us.Last_Name;
-                        UpdateUserDateTextBoxFirstName.Text = us.First_Name;
-                        UpdateUserDateTextBoxPhone.Text = us.Phone;
-                        UpdateUserDateTextBoxEmail.Text = us.Email;
-                        break;
-                    }
-                }
+                int user_ID = Convert.ToInt32(UpdateUserDataTextBoxID.Text);
+                user = db.Users
+                    .Where(us => us.User_Id == user_ID)
+                    .FirstOrDefault();
+
+                UpdateUserDataTextBoxLoginName.Text = user.Login_Name;
+                UpdateUserDataTextBoxPassword.Text = user.Password;
+                UpdateUserDataTextBoxLastName.Text = user.Last_Name;
+                UpdateUserDataTextBoxFirstName.Text = user.First_Name;
+                UpdateUserDataTextBoxPhone.Text = user.Phone;
+                UpdateUserDataTextBoxEmail.Text = user.Email;
             }
+            Get_All_Data();
         }
     }
 }

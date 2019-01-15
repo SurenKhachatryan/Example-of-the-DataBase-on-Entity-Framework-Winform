@@ -42,7 +42,7 @@
             this.NewUserButtonSignUp = new System.Windows.Forms.Button();
             this.NewUserTextBoxPhone = new System.Windows.Forms.TextBox();
             this.NewUserTextBoxEmail = new System.Windows.Forms.TextBox();
-            this.UpdateUserDateTextBoxID = new System.Windows.Forms.TextBox();
+            this.UpdateUserDataTextBoxID = new System.Windows.Forms.TextBox();
             this.NewUserTextBoxLastName = new System.Windows.Forms.TextBox();
             this.SelectAllUserDataButton = new System.Windows.Forms.Button();
             this.NewUserGroupBox = new System.Windows.Forms.GroupBox();
@@ -58,17 +58,25 @@
             this.UpdateUserDataGroupBox = new System.Windows.Forms.GroupBox();
             this.UpdateUserDataButton = new System.Windows.Forms.Button();
             this.UpdateUserDataButtonGetUserData = new System.Windows.Forms.Button();
-            this.UpdateUserDateTextBoxPhone = new System.Windows.Forms.TextBox();
-            this.UpdateUserDateTextBoxEmail = new System.Windows.Forms.TextBox();
-            this.UpdateUserDateTextBoxLastName = new System.Windows.Forms.TextBox();
-            this.UpdateUserDateTextBoxFirstName = new System.Windows.Forms.TextBox();
-            this.UpdateUserDateTextBoxPassword = new System.Windows.Forms.TextBox();
-            this.UpdateUserDateTextBoxLoginName = new System.Windows.Forms.TextBox();
-            this.SelectAllUserDataListBox = new System.Windows.Forms.ListBox();
+            this.UpdateUserDataTextBoxPhone = new System.Windows.Forms.TextBox();
+            this.UpdateUserDataTextBoxEmail = new System.Windows.Forms.TextBox();
+            this.UpdateUserDataTextBoxLastName = new System.Windows.Forms.TextBox();
+            this.UpdateUserDataTextBoxFirstName = new System.Windows.Forms.TextBox();
+            this.UpdateUserDataTextBoxPassword = new System.Windows.Forms.TextBox();
+            this.UpdateUserDataTextBoxLoginName = new System.Windows.Forms.TextBox();
             this.DeleteDataGroupBox = new System.Windows.Forms.GroupBox();
+            this.SelectAllUserDataGridView = new System.Windows.Forms.DataGridView();
+            this.User_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.First_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Last_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Login_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.E_mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NewUserGroupBox.SuspendLayout();
             this.UpdateUserDataGroupBox.SuspendLayout();
             this.DeleteDataGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SelectAllUserDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // DeleteUserButton
@@ -79,7 +87,7 @@
             this.DeleteUserButton.TabIndex = 35;
             this.DeleteUserButton.Text = "Delete User";
             this.DeleteUserButton.UseVisualStyleBackColor = true;
-            this.DeleteUserButton.Click += new System.EventHandler(this.DeleteUserButton_Click);
+            this.DeleteUserButton.Click += new System.EventHandler(this.Delete_User_Button_Click);
             // 
             // DeleteUserTextBoxID
             // 
@@ -168,7 +176,7 @@
             this.NewUserButtonSignUp.TabIndex = 20;
             this.NewUserButtonSignUp.Text = "Sign Up";
             this.NewUserButtonSignUp.UseVisualStyleBackColor = true;
-            this.NewUserButtonSignUp.Click += new System.EventHandler(this.NewUserButtonSignUp_Click);
+            this.NewUserButtonSignUp.Click += new System.EventHandler(this.New_User_Button_Sign_Up_Click);
             // 
             // NewUserTextBoxPhone
             // 
@@ -186,10 +194,10 @@
             // 
             // UpdateUserDateTextBoxID
             // 
-            this.UpdateUserDateTextBoxID.Location = new System.Drawing.Point(72, 21);
-            this.UpdateUserDateTextBoxID.Name = "UpdateUserDateTextBoxID";
-            this.UpdateUserDateTextBoxID.Size = new System.Drawing.Size(64, 20);
-            this.UpdateUserDateTextBoxID.TabIndex = 30;
+            this.UpdateUserDataTextBoxID.Location = new System.Drawing.Point(72, 21);
+            this.UpdateUserDataTextBoxID.Name = "UpdateUserDateTextBoxID";
+            this.UpdateUserDataTextBoxID.Size = new System.Drawing.Size(64, 20);
+            this.UpdateUserDataTextBoxID.TabIndex = 30;
             // 
             // NewUserTextBoxLastName
             // 
@@ -203,7 +211,7 @@
             this.SelectAllUserDataButton.BackColor = System.Drawing.Color.Azure;
             this.SelectAllUserDataButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SelectAllUserDataButton.ForeColor = System.Drawing.Color.OrangeRed;
-            this.SelectAllUserDataButton.Location = new System.Drawing.Point(666, 482);
+            this.SelectAllUserDataButton.Location = new System.Drawing.Point(726, 482);
             this.SelectAllUserDataButton.Name = "SelectAllUserDataButton";
             this.SelectAllUserDataButton.Size = new System.Drawing.Size(153, 30);
             this.SelectAllUserDataButton.TabIndex = 48;
@@ -314,13 +322,13 @@
             // 
             this.UpdateUserDataGroupBox.Controls.Add(this.UpdateUserDataButton);
             this.UpdateUserDataGroupBox.Controls.Add(this.UpdateUserDataButtonGetUserData);
-            this.UpdateUserDataGroupBox.Controls.Add(this.UpdateUserDateTextBoxPhone);
-            this.UpdateUserDataGroupBox.Controls.Add(this.UpdateUserDateTextBoxEmail);
-            this.UpdateUserDataGroupBox.Controls.Add(this.UpdateUserDateTextBoxLastName);
-            this.UpdateUserDataGroupBox.Controls.Add(this.UpdateUserDateTextBoxFirstName);
-            this.UpdateUserDataGroupBox.Controls.Add(this.UpdateUserDateTextBoxPassword);
-            this.UpdateUserDataGroupBox.Controls.Add(this.UpdateUserDateTextBoxLoginName);
-            this.UpdateUserDataGroupBox.Controls.Add(this.UpdateUserDateTextBoxID);
+            this.UpdateUserDataGroupBox.Controls.Add(this.UpdateUserDataTextBoxPhone);
+            this.UpdateUserDataGroupBox.Controls.Add(this.UpdateUserDataTextBoxEmail);
+            this.UpdateUserDataGroupBox.Controls.Add(this.UpdateUserDataTextBoxLastName);
+            this.UpdateUserDataGroupBox.Controls.Add(this.UpdateUserDataTextBoxFirstName);
+            this.UpdateUserDataGroupBox.Controls.Add(this.UpdateUserDataTextBoxPassword);
+            this.UpdateUserDataGroupBox.Controls.Add(this.UpdateUserDataTextBoxLoginName);
+            this.UpdateUserDataGroupBox.Controls.Add(this.UpdateUserDataTextBoxID);
             this.UpdateUserDataGroupBox.Controls.Add(this.label13);
             this.UpdateUserDataGroupBox.Controls.Add(this.label12);
             this.UpdateUserDataGroupBox.Controls.Add(this.label11);
@@ -344,7 +352,7 @@
             this.UpdateUserDataButton.TabIndex = 38;
             this.UpdateUserDataButton.Text = "Update Data";
             this.UpdateUserDataButton.UseVisualStyleBackColor = true;
-            this.UpdateUserDataButton.Click += new System.EventHandler(this.UpdateUserDataButton_Click);
+            this.UpdateUserDataButton.Click += new System.EventHandler(this.Update_User_Data_Button_Click);
             // 
             // UpdateUserDataButtonGetUserData
             // 
@@ -354,57 +362,49 @@
             this.UpdateUserDataButtonGetUserData.TabIndex = 37;
             this.UpdateUserDataButtonGetUserData.Text = "Get User Data";
             this.UpdateUserDataButtonGetUserData.UseVisualStyleBackColor = true;
-            this.UpdateUserDataButtonGetUserData.Click += new System.EventHandler(this.UpdateUserDataButtonGetUserData_Click);
+            this.UpdateUserDataButtonGetUserData.Click += new System.EventHandler(this.Update_User_Data_Button_Get_User_Data_Click);
             // 
             // UpdateUserDateTextBoxPhone
             // 
-            this.UpdateUserDateTextBoxPhone.Location = new System.Drawing.Point(72, 177);
-            this.UpdateUserDateTextBoxPhone.Name = "UpdateUserDateTextBoxPhone";
-            this.UpdateUserDateTextBoxPhone.Size = new System.Drawing.Size(153, 20);
-            this.UpdateUserDateTextBoxPhone.TabIndex = 36;
+            this.UpdateUserDataTextBoxPhone.Location = new System.Drawing.Point(72, 177);
+            this.UpdateUserDataTextBoxPhone.Name = "UpdateUserDateTextBoxPhone";
+            this.UpdateUserDataTextBoxPhone.Size = new System.Drawing.Size(153, 20);
+            this.UpdateUserDataTextBoxPhone.TabIndex = 36;
             // 
             // UpdateUserDateTextBoxEmail
             // 
-            this.UpdateUserDateTextBoxEmail.Location = new System.Drawing.Point(72, 151);
-            this.UpdateUserDateTextBoxEmail.Name = "UpdateUserDateTextBoxEmail";
-            this.UpdateUserDateTextBoxEmail.Size = new System.Drawing.Size(153, 20);
-            this.UpdateUserDateTextBoxEmail.TabIndex = 35;
+            this.UpdateUserDataTextBoxEmail.Location = new System.Drawing.Point(72, 151);
+            this.UpdateUserDataTextBoxEmail.Name = "UpdateUserDateTextBoxEmail";
+            this.UpdateUserDataTextBoxEmail.Size = new System.Drawing.Size(153, 20);
+            this.UpdateUserDataTextBoxEmail.TabIndex = 35;
             // 
             // UpdateUserDateTextBoxLastName
             // 
-            this.UpdateUserDateTextBoxLastName.Location = new System.Drawing.Point(72, 125);
-            this.UpdateUserDateTextBoxLastName.Name = "UpdateUserDateTextBoxLastName";
-            this.UpdateUserDateTextBoxLastName.Size = new System.Drawing.Size(153, 20);
-            this.UpdateUserDateTextBoxLastName.TabIndex = 34;
+            this.UpdateUserDataTextBoxLastName.Location = new System.Drawing.Point(72, 125);
+            this.UpdateUserDataTextBoxLastName.Name = "UpdateUserDateTextBoxLastName";
+            this.UpdateUserDataTextBoxLastName.Size = new System.Drawing.Size(153, 20);
+            this.UpdateUserDataTextBoxLastName.TabIndex = 34;
             // 
             // UpdateUserDateTextBoxFirstName
             // 
-            this.UpdateUserDateTextBoxFirstName.Location = new System.Drawing.Point(72, 99);
-            this.UpdateUserDateTextBoxFirstName.Name = "UpdateUserDateTextBoxFirstName";
-            this.UpdateUserDateTextBoxFirstName.Size = new System.Drawing.Size(153, 20);
-            this.UpdateUserDateTextBoxFirstName.TabIndex = 33;
+            this.UpdateUserDataTextBoxFirstName.Location = new System.Drawing.Point(72, 99);
+            this.UpdateUserDataTextBoxFirstName.Name = "UpdateUserDateTextBoxFirstName";
+            this.UpdateUserDataTextBoxFirstName.Size = new System.Drawing.Size(153, 20);
+            this.UpdateUserDataTextBoxFirstName.TabIndex = 33;
             // 
             // UpdateUserDateTextBoxPassword
             // 
-            this.UpdateUserDateTextBoxPassword.Location = new System.Drawing.Point(72, 73);
-            this.UpdateUserDateTextBoxPassword.Name = "UpdateUserDateTextBoxPassword";
-            this.UpdateUserDateTextBoxPassword.Size = new System.Drawing.Size(153, 20);
-            this.UpdateUserDateTextBoxPassword.TabIndex = 32;
+            this.UpdateUserDataTextBoxPassword.Location = new System.Drawing.Point(72, 73);
+            this.UpdateUserDataTextBoxPassword.Name = "UpdateUserDateTextBoxPassword";
+            this.UpdateUserDataTextBoxPassword.Size = new System.Drawing.Size(153, 20);
+            this.UpdateUserDataTextBoxPassword.TabIndex = 32;
             // 
             // UpdateUserDateTextBoxLoginName
             // 
-            this.UpdateUserDateTextBoxLoginName.Location = new System.Drawing.Point(72, 47);
-            this.UpdateUserDateTextBoxLoginName.Name = "UpdateUserDateTextBoxLoginName";
-            this.UpdateUserDateTextBoxLoginName.Size = new System.Drawing.Size(153, 20);
-            this.UpdateUserDateTextBoxLoginName.TabIndex = 31;
-            // 
-            // SelectAllUserDataListBox
-            // 
-            this.SelectAllUserDataListBox.FormattingEnabled = true;
-            this.SelectAllUserDataListBox.Location = new System.Drawing.Point(243, 3);
-            this.SelectAllUserDataListBox.Name = "SelectAllUserDataListBox";
-            this.SelectAllUserDataListBox.Size = new System.Drawing.Size(575, 472);
-            this.SelectAllUserDataListBox.TabIndex = 44;
+            this.UpdateUserDataTextBoxLoginName.Location = new System.Drawing.Point(72, 47);
+            this.UpdateUserDataTextBoxLoginName.Name = "UpdateUserDateTextBoxLoginName";
+            this.UpdateUserDataTextBoxLoginName.Size = new System.Drawing.Size(153, 20);
+            this.UpdateUserDataTextBoxLoginName.TabIndex = 31;
             // 
             // DeleteDataGroupBox
             // 
@@ -419,21 +419,86 @@
             this.DeleteDataGroupBox.TabStop = false;
             this.DeleteDataGroupBox.Text = "Delete User";
             // 
+            // SelectAllUserDataGridView
+            // 
+            this.SelectAllUserDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.SelectAllUserDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SelectAllUserDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.User_ID,
+            this.First_Name,
+            this.Last_Name,
+            this.Login_Name,
+            this.Password,
+            this.E_mail,
+            this.Phone});
+            this.SelectAllUserDataGridView.Location = new System.Drawing.Point(242, 8);
+            this.SelectAllUserDataGridView.Name = "SelectAllUserDataGridView";
+            this.SelectAllUserDataGridView.Size = new System.Drawing.Size(637, 472);
+            this.SelectAllUserDataGridView.TabIndex = 49;
+            // 
+            // User_ID
+            // 
+            this.User_ID.HeaderText = "User ID";
+            this.User_ID.Name = "User_ID";
+            this.User_ID.ReadOnly = true;
+            this.User_ID.Width = 49;
+            // 
+            // First_Name
+            // 
+            this.First_Name.HeaderText = "First Name";
+            this.First_Name.Name = "First_Name";
+            this.First_Name.ReadOnly = true;
+            this.First_Name.Width = 82;
+            // 
+            // Last_Name
+            // 
+            this.Last_Name.HeaderText = "Last Name";
+            this.Last_Name.Name = "Last_Name";
+            this.Last_Name.ReadOnly = true;
+            this.Last_Name.Width = 83;
+            // 
+            // Login_Name
+            // 
+            this.Login_Name.HeaderText = "Login Name";
+            this.Login_Name.Name = "Login_Name";
+            this.Login_Name.ReadOnly = true;
+            this.Login_Name.Width = 89;
+            // 
+            // Password
+            // 
+            this.Password.HeaderText = "Password";
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            this.Password.Width = 70;
+            // 
+            // E_mail
+            // 
+            this.E_mail.HeaderText = "E-mail";
+            this.E_mail.Name = "E_mail";
+            this.E_mail.ReadOnly = true;
+            this.E_mail.Width = 120;
+            // 
+            // Phone
+            // 
+            this.Phone.HeaderText = "Phone";
+            this.Phone.Name = "Phone";
+            this.Phone.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(821, 518);
+            this.ClientSize = new System.Drawing.Size(881, 518);
+            this.Controls.Add(this.SelectAllUserDataGridView);
             this.Controls.Add(this.SelectAllUserDataButton);
             this.Controls.Add(this.NewUserGroupBox);
             this.Controls.Add(this.UpdateUserDataGroupBox);
-            this.Controls.Add(this.SelectAllUserDataListBox);
             this.Controls.Add(this.DeleteDataGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(837, 557);
-            this.MinimumSize = new System.Drawing.Size(837, 557);
+            this.MaximumSize = new System.Drawing.Size(897, 557);
+            this.MinimumSize = new System.Drawing.Size(897, 557);
             this.Name = "Form1";
             this.Text = "Insert , Update, Delete, Select";
             this.NewUserGroupBox.ResumeLayout(false);
@@ -442,6 +507,7 @@
             this.UpdateUserDataGroupBox.PerformLayout();
             this.DeleteDataGroupBox.ResumeLayout(false);
             this.DeleteDataGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SelectAllUserDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -461,7 +527,7 @@
         private System.Windows.Forms.Button NewUserButtonSignUp;
         private System.Windows.Forms.TextBox NewUserTextBoxPhone;
         private System.Windows.Forms.TextBox NewUserTextBoxEmail;
-        private System.Windows.Forms.TextBox UpdateUserDateTextBoxID;
+        private System.Windows.Forms.TextBox UpdateUserDataTextBoxID;
         private System.Windows.Forms.TextBox NewUserTextBoxLastName;
         private System.Windows.Forms.Button SelectAllUserDataButton;
         private System.Windows.Forms.GroupBox NewUserGroupBox;
@@ -477,14 +543,21 @@
         private System.Windows.Forms.GroupBox UpdateUserDataGroupBox;
         private System.Windows.Forms.Button UpdateUserDataButton;
         private System.Windows.Forms.Button UpdateUserDataButtonGetUserData;
-        private System.Windows.Forms.TextBox UpdateUserDateTextBoxPhone;
-        private System.Windows.Forms.TextBox UpdateUserDateTextBoxEmail;
-        private System.Windows.Forms.TextBox UpdateUserDateTextBoxLastName;
-        private System.Windows.Forms.TextBox UpdateUserDateTextBoxFirstName;
-        private System.Windows.Forms.TextBox UpdateUserDateTextBoxPassword;
-        private System.Windows.Forms.TextBox UpdateUserDateTextBoxLoginName;
-        private System.Windows.Forms.ListBox SelectAllUserDataListBox;
+        private System.Windows.Forms.TextBox UpdateUserDataTextBoxPhone;
+        private System.Windows.Forms.TextBox UpdateUserDataTextBoxEmail;
+        private System.Windows.Forms.TextBox UpdateUserDataTextBoxLastName;
+        private System.Windows.Forms.TextBox UpdateUserDataTextBoxFirstName;
+        private System.Windows.Forms.TextBox UpdateUserDataTextBoxPassword;
+        private System.Windows.Forms.TextBox UpdateUserDataTextBoxLoginName;
         private System.Windows.Forms.GroupBox DeleteDataGroupBox;
+        private System.Windows.Forms.DataGridView SelectAllUserDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn User_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn First_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Last_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Login_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn E_mail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
     }
 }
 
